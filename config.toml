@@ -1,5 +1,5 @@
-title = "Awesome Hugo blog"
-baseURL = 'https://hugo-blog-awesome.netlify.app/'
+title = "A corner of Zenith"
+baseURL = 'https://xenith.xyz/'
 languageCode = 'en-us'
 theme = "hugo-blog-awesome"
 
@@ -36,24 +36,16 @@ enableEmoji = true
     weight = 30
 
 [params]
-  sitename = "Awesome hugo blog"
+  sitename = "A corner of Zenith"
   defaultColor = "dark" # set default color mode: dark or light
-  description = "Minimal Hugo blog theme with light and dark mode support"
+  description = "A corner for me to talk about stuff. Don't mind my grammar, or my writing skills for that matter, I am new to this :)"
 
 [params.author]
   avatar = "img/avatar.jpg"
-  intro = "Awesome hugo blog"
-  name = "Sidharth R"
-  description = "A fast, minimalistic Hugo theme with light and dark mode support, for running a personal site or blog"
+  intro = "A corner of Zenith"
+  name = "Zenith"
+  description = "A corner for me to talk about stuff. Don't mind my grammar, or my writing skills for that matter, I am new to this :)"
 
 [[params.socialIcons]]
 name = "github"
-url = "https://github.com/hugo-sid"
-
-[[params.socialIcons]]
-name = "twitter"
-url = "https://twitter.com"
-
-[[params.socialIcons]]
-name = "Rss"
-url = "index.xml"
+url = "https://github.com/dotzenith"
