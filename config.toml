@@ -36,15 +36,15 @@ enableEmoji = true
     weight = 30
 
 [params]
-  sitename = "A corner of Zenith"
+  sitename = "Zenith"
   defaultColor = "dark" # set default color mode: dark or light
-  description = "A corner for me to talk about stuff. Don't mind my grammar, or my writing skills for that matter, I am new to this :)"
+  description = "A corner at the end of the internet"
 
 [params.author]
   avatar = "img/avatar.jpg"
-  intro = "A corner of Zenith"
+  intro = "At my Zenith"
   name = "Zenith"
-  description = "A corner for me to talk about stuff. Don't mind my grammar, or my writing skills for that matter, I am new to this :)"
+  description = "Hi, welcome to my corner of the internet. Yes `zenith.xyz` was taken, and no I am not considering any other names."
 
 [[params.socialIcons]]
 name = "github"
