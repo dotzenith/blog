@@ -5,4 +5,4 @@ date: 2023-03-13
 author: Zenith
 ---
 
-A neovim shill, more to come.
+A full-time neovim shill
