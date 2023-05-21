@@ -41,7 +41,7 @@ enableEmoji = true
   description = "A corner at the end of the internet"
 
 [params.author]
-  avatar = "img/avatar.jpg"
+  avatar = "avatar.jpg"
   intro = "At my Zenith"
   name = "Zenith"
   description = "Hi, welcome to my corner of the internet. Yes `zenith.xyz` was taken, and no I am not considering any other names."
