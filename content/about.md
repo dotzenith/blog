@@ -1,7 +1,7 @@
 ---
 title: About
 description: A little bit about me
-date: 2023-06-19
+date: 2023-07-10
 author: Zenith
 ---
 
