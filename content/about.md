@@ -5,9 +5,9 @@ date: 2023-06-19
 author: Zenith
 ---
 
-I previously wrote up a whole big paragraph about why it's so hard to write an about page, and after looking at it for a grant total of two seconds, I decided that I was just waffling, saying a whole lot of nothing. 
+I previously wrote up a whole big paragraph about why it's so hard to write an about page, and after looking at it for a grand total of two seconds, I decided that I was just waffling, saying a whole lot of nothing. 
 
-Anyways, Hi! My name is Danshu, and this is my Zenith! I'll probably write a goofy little post about the meaning behind Zenith and why I chose it (spoiler: it's a lot simpler than I'd like to admit). I'm not fully sure what I'll be writing about here, but I do have a few ideas (otherwise I wouldn't have set up this site to begin with). 
+Anyways, Hi! My name is Danshu, and this is my Zenith! I'll probably write a goofy little post about the meaning behind Zenith and why I chose it (spoiler: it's a lot simpler than I'd like to admit). I'm not fully sure what I'll be writing about here, but I do have a few ideas. 
 
 In the absence of solid blog posts, I'll just list a few topics and leave without expanding upon them.
 
