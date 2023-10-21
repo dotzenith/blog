@@ -7,6 +7,8 @@ theme = "hugo-blog-awesome"
 # To disable  Google Analytics, simply leave the field empty or remove the next line
 googleAnalytics = '' # G-MEASUREMENT_ID
 
+defaultContentLanguage = "en-us"
+
 
 # Enable emojis globally
 enableEmoji = true
@@ -15,6 +17,12 @@ enableEmoji = true
 [markup]
   [markup.highlight]
     noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+	[markup.tableOfContents]
+		startLevel = 2 # ToC starts from H2
+		endLevel = 4 # ToC ends at H4
+		ordered = false # generates <ul> instead of <ol>
 
 [menu]
   [[menu.main]] 
