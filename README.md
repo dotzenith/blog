@@ -8,5 +8,3 @@ To create a new post, run the following command:
 ```
 hugo new posts/my-first-post.md
 ```
-
-And then edit that to suit your needs
