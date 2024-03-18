@@ -74,14 +74,14 @@ provider cloudflare.com {
 ```
 > Note: Make sure you have a corresponding A record for the `hostname` in your Cloudflare dashboard
 
-Once the config file is taken care, we can enable and start the service by running the following:
+Once the config file is taken care of, we can enable and start the service by running the following:
 
 ```
 sudo systemctl enable inadyn.service
 sudo systemctl start  inadyn.service
 ```
 
-And you can check the status running:
+And you can check the status by running:
 
 ```
 sudo systemctl status inadyn.service
