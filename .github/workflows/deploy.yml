@@ -15,8 +15,8 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
-        port: 22
+        port: 2222
         script: |
-          cd ~/blog
+          cd ~/web/blog
           git pull origin main
           hugo
