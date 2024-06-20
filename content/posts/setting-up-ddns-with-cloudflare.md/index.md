@@ -93,4 +93,4 @@ If all goes well, inadyn should update the specified hostname with the IP of you
 
 # Conclusion
 
-I hope this serves as an easy and straightforward guide to setting up DDNS with Cloudflare. Next up, How to set up a wireguard VPN tunnel into your home network :)
+I hope this serves as an easy and straightforward guide to setting up DDNS with Cloudflare.
