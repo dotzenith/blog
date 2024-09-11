@@ -1,5 +1,5 @@
 ---
-title: How to set up Dynamic DNS for Cloudflare
+title: How to set up Dynamic DNS with Cloudflare
 date: 2023-10-21T19:07:47-04:00
 description: Because paying for a static IP is expensive
 ---
@@ -8,39 +8,27 @@ description: Because paying for a static IP is expensive
 
 As someone too poor to pay for a static IP, I struggled a little when I wanted to set up a VPN tunnel into my home network so I could access my self-hosted applications. Fortunately, getting DDNS working is actually quite easy and it only takes a few minutes. 
 
-I'll be using [inadyn](https://github.com/troglobit/inadyn) for this article since it's not nearly as buggy as [ddclient](https://github.com/ddclient/ddclient). As the title suggests, I'll only cover the configuration for Cloudflare but inadyn supports a lot of different [providers](https://github.com/troglobit/inadyn#supported-providers) with [examples](https://github.com/troglobit/inadyn#example) for all of them as well. This guide also assumes you're using linux.
+I'll be using [ZenDNS](https://github.com/dotzenith/ZenDNS) for this article because I wrote it myself to
+be simple and easy to use.
+As the title suggests, I'll only cover the configuration for Cloudflare but ZenDNS also has support for other [providers](https://github.com/dotzenith/ZenDNS?tab=readme-ov-file#-configuration).
+
+This guide assumes you're using Linux, but you should be able follow on MacOS and Windows as well.
 
 # Requirements
 
-- [inadyn](https://github.com/troglobit/inadyn) `v2.12.0` or above
+- Working knowledge of the commandline
+- [ZenDNS](https://github.com/dotzenith/ZenDNS)
 - A Cloudflare API Token with `Zone:Zone:Read` and `Zone:DNS:Write` permissions
 
-# Installing [inadyn](https://github.com/troglobit/inadyn)
+# Installing ZenDNS
 
-Navigate over to [install instructions](https://github.com/troglobit/inadyn#build--install) and follow the section relevant for your distro.
+Navigate over to [install instructions](https://github.com/dotzenith/ZenDNS?tab=readme-ov-file#-installation) and choose the installation option that works best for you.
 
-I found that the [debian package](https://packages.debian.org/sid/inadyn) was still on `v2.11.0-1` so I decided to install from source.
-
-The steps are as follows: 
-
+For me, it was as simple as:
 ```sh
 # Download the source
-curl -OL https://github.com/troglobit/inadyn/releases/download/v2.12.0/inadyn-2.12.0.tar.gz
-
-# Extract and cd into extracted folder
-tar xf inadyn-2.12.0.tar.gz && cd inadyn-2.12.0
-
-# Install dependencies
-sudo apt install gnutls-dev libconfuse-dev
-sudo apt install build-essential pkg-config
-
-# Configure and build
-./configure --sysconfdir=/etc --localstatedir=/var
-make -j5
-sudo make install-strip
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/dotzenith/zendns/releases/latest/download/zendns-installer.sh | sh
 ```
-
-If the above commands succeed without any errors, you're good to go. If not, please refer to the [build instruction](https://github.com/troglobit/inadyn#building-from-source) again.
 
 # Getting the Cloudflare API key
 
@@ -48,49 +36,48 @@ If the above commands succeed without any errors, you're good to go. If not, ple
 2. Click on the `API Tokens` tab in the sidebar
 3. Click `Create Token` and then use the `Edit zone DNS` template
 4. In the permissions section, add `Zone:Zone:Read` and `Zone:DNS:Edit`
-5. For Zone Resources, select `Include -> All Zones`
-6. You can leave the Client IP Address Filtering section as-is
-7. Select how long you'd like the token to be active for in the TTL section
-8. Click `Continue to summary`
-9. Verify everything and click `Create Token`
-10. Copy the token and keep it saved, you will only see this once
+5. You can leave the Client IP Address Filtering section as-is
+6. Select how long you'd like the token to be active for in the TTL section
+7. Click `Continue to summary`
+8. Verify everything and click `Create Token`
+9. Copy the token and keep it saved, you will only see this once
 
-# Set up inadyn
+# Set up ZenDNS
 
-Now that we have all of the pre-requisites taken care of, we're finally ready to set up the Dynamic DNS service
+Now that we have the pre-requisites taken care of, we're finally ready to go
 
-Open `/etc/inadyn.conf` in the text-editor of your choice and paste the following:
+Open `~/.config/zendns/config.yaml` in the text-editor of your choice and paste the following:
+> Note: this file can be anywhere
 
 ```
-period = 300 # How often the IP is checked. The value denotes seconds
-
-provider cloudflare.com {
-    username = yourdomain.com
-    password = your-api-token
-    hostname = hostname.yourdomain.com
-    ttl = 1
-    proxied = false # optional.
-}
+cloudflare:
+  - key: "your-api-token"
+    zone: "yourdomain.com"
+    hostname: "hostname.yourdomain.com"
+    ttl: 1
+    proxied: false
 ```
 > Note: Make sure you have a corresponding A record for the `hostname` in your Cloudflare dashboard
 
-Once the config file is taken care of, we can enable and start the service by running the following:
-
+Once the config file is taken care of, we can run ZenDNS like so:
 ```
-sudo systemctl enable inadyn.service
-sudo systemctl start  inadyn.service
+zendns --config ~/.config/zendns/config.yaml
 ```
 
-And you can check the status by running:
+# Update DNS entries automatically
 
+We very obviously don't want to manually run ZenDNS every time our IP changes, so we can automate it using [cron](https://en.wikipedia.org/wiki/Cron)
+
+We can use cron by running `crontab -e` and then adding this entry:
 ```
-sudo systemctl status inadyn.service
+*/5 * * * * /full/path/to/zendns --config ~/.config/zendns/config.yaml --log /var/log/zendns.log
 ```
+> Note: You might need to pass in the full path to ZenDNS because it might no be in the $PATH for cron
 
-If all goes well, inadyn should update the specified hostname with the IP of your host machine
+This will run ZenDNS every 5 minutes and update the entries if they have changed
 
-> Note: inadyn will only update the IP if there's a change, but you can force an update by specifying the `forced-update = 300 # The value denotes seconds` config option
+> Note: ZenDNS will cache your IP and only make changes if they have changed since last usage, you can override this by passing the `--force` flag
 
 # Conclusion
 
-I hope this serves as an easy and straightforward guide to setting up DDNS with Cloudflare.
+I hope this serves as an easy and straightforward guide to setting up DDNS using Cloudflare. Next up, we'll set up a wireguard tunnel to easily access our homelab services when we're away.
