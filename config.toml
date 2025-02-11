@@ -1,5 +1,5 @@
-title = "A corner of Zenith"
-baseURL = 'https://xenith.xyz/'
+title = "Danshu's Thoughts"
+baseURL = 'https://blog.danshu.co/'
 languageCode = 'en-us'
 theme = "hugo-blog-awesome"
 
@@ -44,15 +44,15 @@ enableEmoji = true
     weight = 30
 
 [params]
-  sitename = "Zenith"
+  sitename = "Danshu's Thoughts"
   defaultColor = "dark" # set default color mode: dark or light
-  description = "A corner at the end of the internet"
+  description = "Thoughts at the end of the internet"
 
 [params.author]
   avatar = "avatar.jpg"
-  intro = "At my Zenith"
-  name = "Zenith"
-  description = "Hi, welcome to my corner of the internet. Yes `zenith.xyz` was taken, and no I am not considering any other names."
+  intro = "Occasionally, I think"
+  name = "Danshu"
+  description = "Hi, welcome to my corner of the internet. Every now and then, a thought comes to me, and this is a place for me to put them down."
 
 [[params.socialIcons]]
 name = "github"
