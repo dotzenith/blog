@@ -5,7 +5,7 @@ date: 2023-07-10
 author: Zenith
 ---
 
-I previously wrote up a whole big paragraph about why it's so hard to write an about page, and after looking at it for a grand total of two seconds, I decided that I was just waffling, saying a whole lot of nothing. 
+I previously wrote a whole big paragraph about why it's so hard to write an about page, and after looking at it for a grand total of two seconds, I decided that I was just waffling, saying a whole lot of nothing. 
 
 Anyways, Hi! My name is Danshu, and this is my corner for writing down my thoughts! I'm not fully sure what I'll be writing about here, but I do have a few ideas. 
 
