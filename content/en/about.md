@@ -2,7 +2,7 @@
 title: About
 description: A little bit about me
 date: 2023-07-10
-author: Zenith
+author: Danshu
 ---
 
 I previously wrote a whole big paragraph about why it's so hard to write an about page, and after looking at it for a grand total of two seconds, I decided that I was just waffling, saying a whole lot of nothing. 
