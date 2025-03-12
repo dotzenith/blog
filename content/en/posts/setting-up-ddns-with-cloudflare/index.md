@@ -49,7 +49,7 @@ Now that we have the pre-requisites taken care of, we're finally ready to go
 Open `~/.config/zendns/config.yaml` in the text-editor of your choice and paste the following:
 > Note: this file can be anywhere
 
-```
+```yaml
 cloudflare:
   - key: "your-api-token"
     zone: "yourdomain.com"
@@ -69,7 +69,7 @@ zendns --config ~/.config/zendns/config.yaml
 We very obviously don't want to manually run ZenDNS every time our IP changes, so we can automate it using [cron](https://en.wikipedia.org/wiki/Cron)
 
 We can use cron by running `crontab -e` and then adding this entry:
-```
+```bash
 */5 * * * * /full/path/to/zendns --config ~/.config/zendns/config.yaml --log /var/log/zendns.log
 ```
 > Note: You might need to pass in the full path to ZenDNS because it might no be in the $PATH for cron
