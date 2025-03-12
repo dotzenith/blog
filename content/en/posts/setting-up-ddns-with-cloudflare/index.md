@@ -3,7 +3,7 @@ title: How to set up Dynamic DNS with Cloudflare
 date: 2023-10-21T19:07:47-04:00
 description: Because paying for a static IP is expensive
 images:
-- post-cover.jpg
+- posts/setting-up-ddns-with-cloudflare/post-cover.jpg
 ---
 
 # Intro 
