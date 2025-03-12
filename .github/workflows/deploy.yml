@@ -17,6 +17,4 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 2222
         script: |
-          cd ~/web/blog
-          git pull origin main
-          hugo
+          bash ~/.bin/blog_time
