@@ -17,4 +17,4 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 2222
         script: |
-          bash ~/.bin/blog_time
+          bash ~/.bin/blog
