@@ -2,4 +2,4 @@ module github.com/dotzenith/blog
 
 go 1.24.1
 
-require github.com/dotzenith/hugo-blog-awesome v0.0.0-20250801203845-807d139d3bb9 // indirect
+require github.com/dotzenith/hugo-blog-awesome v0.0.0-20250920052726-f59ed2c4b8b4 // indirect
