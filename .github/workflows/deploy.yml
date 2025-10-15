@@ -15,6 +15,8 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
-        port: 2222
         script: |
-          bash ~/.bin/blog
+          cd ~/static/blog
+          git pull origin main
+          hugo mod get
+          hugo
