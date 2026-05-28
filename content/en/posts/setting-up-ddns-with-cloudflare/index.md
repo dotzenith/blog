@@ -10,7 +10,7 @@ og_size: "30"
 As someone too poor to pay for a static IP, I struggled a little when I wanted to set up a VPN tunnel into my home network so I could access my self-hosted applications. Fortunately, getting DDNS working is actually quite easy and it only takes a few minutes. 
 
 I'll be using [ZenDNS](https://github.com/dotzenith/ZenDNS) for this article because I wrote it myself to
-be simple and easy to use.
+be simple and easy to use. I swear this is not shameless self-promo, though this is my blog so who's going to stop me anyways?
 As the title suggests, I'll only cover the configuration for Cloudflare but ZenDNS also has support for other [providers](https://github.com/dotzenith/ZenDNS?tab=readme-ov-file#-configuration).
 
 This guide assumes you're using Linux, but you should be able follow on MacOS and Windows as well.
@@ -56,8 +56,8 @@ Open `~/.config/zendns/config.json` in the text-editor of your choice and paste 
         {
             "type": "cloudflare",
             "key": "your-api-key",
-            "zone": "your-domain.com",
-            "hostname": "your-hostname",
+            "zone": "domain.com",
+            "hostname": "hostname.domain.com",
             "ttl": 1,
             "proxied": false
         }
@@ -81,10 +81,27 @@ We can use cron by running `crontab -e` and then adding this entry:
 ```
 > Note: You might need to pass in the full path to ZenDNS because it might no be in the $PATH for cron
 
-This will run ZenDNS every 5 minutes and update the entries if they have changed
+This will run ZenDNS every 5 minutes and update the entries if they have changed. 5 minutes is obviously a little
+overzealous, but you can always adjust this.
 
 > Note: ZenDNS will cache your IP and only make changes if they have changed since last usage, you can override this by passing the `--force` flag
 
+# Setting up a Wireguard tunnel
+
+If you don't already know what you're going to use to set up your VPN tunnel,
+my recommendation is [wg-easy](https://github.com/wg-easy/wg-easy).
+
+It's easy enough to set up, and their official docs are a good resource.
+The only thing you need to figure out is [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding).
+The process for this is different for every router, so I don't have real instructions for this bit.
+
+The basic idea is as follows: Let's say your wireguard port of choice is the default `51820`.
+You need to configure your router such that all public traffic coming in to port `51820` gets routed
+to your server's port `51820` over UDP.
+
+I know this part is not particularly detailed, but it really does just depend on what router you have.
+
 # Conclusion
 
-I hope this serves as an easy and straightforward guide to setting up DDNS using Cloudflare. Next up, we'll set up a wireguard tunnel to easily access our homelab services when we're away.
+That's all from me! I hope you've been able to use this guide to set up DDNS, and maybe even a wireguard tunnel into
+your home network!
