@@ -18,5 +18,5 @@ jobs:
         script: |
           cd ~/static/blog
           git pull origin main
-          hugo mod get
-          hugo
+          /home/linuxbrew/.linuxbrew/bin/hugo mod get
+          /home/linuxbrew/.linuxbrew/bin/hugo
