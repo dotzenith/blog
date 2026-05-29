@@ -1,6 +1,6 @@
 title = "Danshu's Musings"
 baseURL = 'https://blog.danshu.co/'
-languageCode = 'en-us'
+locale = 'en-us'
 defaultContentLanguage = "en-us"
 
 # Enable emojis globally
@@ -20,8 +20,8 @@ ignoreErrors = ["additional-script-loading-error"] # ignore error of loading add
     unsafe = true
 
 [Languages.en-us]
-  languageName = "English"
-  languageCode = "en-us"
+  label = "English"
+  locale = "en-us"
   contentDir = "content/en"
   weight = 1
 
