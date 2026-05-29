@@ -22,7 +22,7 @@ That's too risky for your home network so you decide to just live like this.
 You don't have to keep living like the above situation. If you already own a domain, you are not limited to the aforementioned
 [HTTP-01 challenge](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) that requires you to open up port 80.
 
-You can instead make of the [DNS-01 challenge](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge), which just requires
+You can instead make use of the [DNS-01 challenge](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge), which just requires
 you to have an API key for your registrar/DNS provider, no need to open up ports to the internet.
 
 I use [cloudflare](https://www.cloudflare.com/) as my registrar so the rest of this post will use that for the specific examples.
@@ -34,7 +34,7 @@ The basic idea here is to use a [reverse proxy](https://www.cloudflare.com/learn
 to fetch wildcard TLS certificates for your domain using the DNS-01 challenge mentioned earlier.
 
 Given that this post is aimed at new selfhosting enjoyers, my recommendation is to use [Nginx Proxy Manager](https://nginxproxymanager.com/).
-It's worth noting that options like [caddy](https://caddyserver.com/) and [traefik](https://github.com/traefik/traefik) exist as well, but I'll leave those an exercise for the reader.
+It's worth noting that options like [caddy](https://caddyserver.com/) and [traefik](https://github.com/traefik/traefik) exist as well, but I'll leave those as an exercise for the reader.
 
 I will also assume that you have [docker](https://docs.docker.com/engine/install/) installed already.
 
@@ -42,7 +42,7 @@ I will also assume that you have [docker](https://docs.docker.com/engine/install
 
 Enough worldbuilding, here's how to actually set up TLS for your selfhosted services.
 The rest of the How To section will assume that your server's internal IP is something like `192.168.70.72`.
-You will of course need to replace that your own server's internal IP address.
+You will of course need to replace that with your own server's internal IP address.
 
 ### Configuring Cloudflare
 
@@ -75,7 +75,7 @@ In the cloudflare dashboard, navigate to the DNS settings tab for your domain, a
 I've largely taken these steps from my post on [setting up dynamic DNS](https://blog.danshu.co/posts/setting-up-ddns-with-cloudflare/)
 but the steps are the same so that should be fine.
 
-1. Login in to your Cloudflare account and on `My Profile` at the top right
+1. Log in to your Cloudflare account and click on `My Profile` at the top right
 2. Click on the `API Tokens` tab in the sidebar
 3. Click `Create Token` and then use the `Edit zone DNS` template
 4. In the permissions section, add `Zone:Zone:Read` and `Zone:DNS:Edit`
@@ -132,7 +132,7 @@ After finishing up the basic set up with NPM from the previous steps, we can now
 6. Replace the dummy API Token with your own in the `Credentials File Content` field
 7. Click `Save`
 
-If all goes well, NPM will take a few seconds get your shiny new TLS certificates for you!
+If all goes well, NPM will take a few seconds to get your shiny new TLS certificates for you!
 
 ### Configuring a service to use HTTPS
 
