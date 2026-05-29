@@ -10,8 +10,8 @@ og_size: "30"
 You've recently fallen into the selfhosting rabbit hole. You've set up a linux server on an old laptop, you've installed docker,
 and you've even figured out how to stream **public domain** movies on your [jellyfin](https://jellyfin.org/) instance.
 
-Despite all of that, you have to go to `http://192.168.70.72:8096` every time you want to watch a movie,
-you have to say "yes, yes I understand" to every TLS error you see.
+Despite all of that, you have to go to `http://192.168.70.72:8096` every time you want to watch a movie.
+A new service you spun up yesterday serves it's own TLS cert, and now you have to say "yes, yes I understand" to every TLS error you see.
 You tell yourself this is fine, this is just the cost of hosting your own stuff.
 
 You vaguely know that you can use [certbot](https://certbot.eff.org/) for TLS certificates, but wait doesn't that require opening up port 80?
