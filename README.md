@@ -1,16 +1,19 @@
 # blog
-A repo for my personal blog
 
-## Posts
+Source for [Danshu's Musings](https://blog.danshu.co/).
 
-To create a new post, run the following command:
+## Create a post
 
+Posts use Hugo page bundles:
+
+```sh
+hugo new content posts/my-first-post/index.md
 ```
-hugo new posts/my-first-post.md
-```
 
-## Updating the template
+## Update the theme
 
-```
-hugo mod get github.com/dotzenith/hugo-blog-awesome@latest
+The site uses `github.com/dotzenith/terminal-blog` as a Hugo Module. Resolve the latest published revision with:
+
+```sh
+hugo mod get github.com/dotzenith/terminal-blog@latest
 ```

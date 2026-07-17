@@ -1,8 +1,8 @@
 ---
-title: HTTPS for selfhosted services is easy actually
+title: "HTTPS for selfhosted services is easy actually"
 date: 2026-05-28T20:09:47-04:00
 description: Annoying errors and hard to remember ip:port combinations begone!
-og_size: "30"
+ogSize: 30
 ---
 
 # The situation at hand

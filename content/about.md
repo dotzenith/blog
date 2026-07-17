@@ -1,8 +1,7 @@
 ---
-title: About
+title: "About"
 description: A little bit about me
 date: 2026-04-04
-author: Danshu
 ---
 
 Writing an about page is actually quite hard, so here's my best shot at one.
