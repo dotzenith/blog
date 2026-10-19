@@ -88,7 +88,7 @@ So, just give it a shot. Do more of your old-fashioned *web surfing* on the desk
 
 # Post-credits
 
-I know I've spent this whole post convincing you that browsing the internet on the desktop is just as fun as, if not more fun than, it is on the phone, and I do sincerely believe that.
+I know I've spent this whole post convincing you that browsing the internet on the desktop is just as fun as, if not more fun than it is on the phone, and I do sincerely believe that.
 However, there is another point that I haven't really been honest about: there is indeed some friction when using the desktop as your main window to the internet, but I believe that's a good thing.
 
 Look, I like the internet and all the dopamine hits it offers as well, but we've got to go outside. I know this has also been talked about to death, but take it from someone who didn't really believe it for a while either:
