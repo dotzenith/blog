@@ -85,3 +85,11 @@ The point being that a lot of these problems are not problems of the platform it
 Unfortunately, this is not the year of the Linux desktop, but it could be the year of The **Desktop**, or The **Laptop**.
 
 So, just give it a shot. Do more of your old-fashioned *web surfing* on the desktop, use your laptop in bed, and discover the joys of a platform that will (mostly) let you do whatever you want.
+
+# Post credits
+
+I know I've spent this whole post convincing you that browsing the internet on the desktop is just as, if not more fun than it is on the phone, and I do sincerely believe that.
+However, there is another point that I haven't really been honest about: there is indeed some friction when using the desktop as your main window to the internet, but I believe that's a good thing.
+
+Look, I like the internet and all the dopamine hits it offers as well, but we've got to go outside. I know this has also been talked about to death, but take it from someone who didn't really believe it for a while either;
+putting the damn phone/desktop down does have its perks. Pick up a book, go see a movie in the theaters, pick up a sport, it's good fun, I promise.
